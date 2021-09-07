@@ -43,6 +43,7 @@ public class TestVehicle {
 		for(Vehicle v: vehicles) {
 			System.out.println(v.toString());
 			v.startVehicle();
+			v.applyBrakes();
 		}
 
 	}

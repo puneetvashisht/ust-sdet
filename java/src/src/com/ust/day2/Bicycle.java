@@ -1,7 +1,7 @@
 package com.ust.day2;
 
 
-public class Bicycle{
+public class Bicycle implements Movement{
 
     private int speed;
 
@@ -33,6 +33,18 @@ public class Bicycle{
     public String toString() {
         return "Bicycle [speed=" + speed + "]";
     }
+
+	@Override
+	public void move() {
+		System.out.println("moving ...");
+		
+	}
+
+	@Override
+	public void stop() {
+		System.out.println("stopping ...");
+		
+	}
 
     
 }

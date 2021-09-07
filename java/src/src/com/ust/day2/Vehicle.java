@@ -1,6 +1,6 @@
 package com.ust.day2;
 
-public class Vehicle {
+public abstract class Vehicle implements Movement{
 	
 	private int speed;
 	int mileage;
@@ -8,10 +8,14 @@ public class Vehicle {
 	public Vehicle() {
 		
 	}
-	public Vehicle(int speed, int mileage, String model) {
+	public Vehicle(int speed, int mileage) {
 		super();
 		this.speed = speed;
 		this.mileage = mileage;
+	}
+	
+	public Vehicle(int speed, int mileage, String model) {
+		this(speed, mileage);
 		this.model = model;
 	}
 	
@@ -32,9 +36,10 @@ public class Vehicle {
 		System.out.println("applying brakes");
 	}
 	
-	public void startVehicle() {
-		System.out.println("Starting vehicle...");
-	}
+//	public void startVehicle() {
+//		
+//	}
+	public abstract void startVehicle();
 	
 	@Override
 	public String toString() {

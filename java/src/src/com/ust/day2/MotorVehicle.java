@@ -17,9 +17,21 @@ public class MotorVehicle extends Vehicle{
 	
 	@Override
 	public void startVehicle() {
-		super.startVehicle();
+	
 		System.out.println("Starting engine....");
 	
+	}
+
+	@Override
+	public void move() {
+		System.out.println("moving ...");
+		
+	}
+
+	@Override
+	public void stop() {
+		System.out.println("stopping ...");
+		
 	}
 	
 	
