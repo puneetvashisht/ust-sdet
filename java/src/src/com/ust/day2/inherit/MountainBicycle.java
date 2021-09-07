@@ -1,6 +1,6 @@
 package com.ust.day2.inherit;
 
-public class MountainBicycle implements Bicycle{
+public class MountainBicycle  extends AbstractBicycle{
 	
 	int speed;
 
