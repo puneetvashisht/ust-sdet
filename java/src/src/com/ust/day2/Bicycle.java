@@ -1,11 +1,20 @@
 package com.ust.day2;
 
+
 public class Bicycle{
 
-    int speed;
+    private int speed;
 
-
-    public Bicycle(){
+    public int getSpeed() {
+		return speed;
+	}
+	public void setSpeed(int speed) {
+		if(speed > 0) {
+			this.speed = speed;
+		}
+		
+	}
+	public Bicycle(){
 
     }
     public Bicycle(int speed) {

@@ -19,7 +19,7 @@ public  class MountainBicycle extends Bicycle{
 
     @Override
     public String toString() {
-        return "MountainBicycle [speed=" + speed  + ", currentGear=" + currentGear + ", gears=" + gears + "]";
+        return "MountainBicycle [speed=" + this.getSpeed() + ", currentGear=" + currentGear + ", gears=" + gears + "]";
     }
 
     // @Override
