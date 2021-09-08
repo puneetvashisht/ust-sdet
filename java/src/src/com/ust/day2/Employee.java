@@ -1,6 +1,8 @@
 package com.ust.day2;
 
-public class Employee {
+
+
+public class Employee implements Comparable<Employee>{
 
     int id;
     String name;
@@ -21,6 +23,18 @@ public class Employee {
     public String toString() {
         return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
     }
+    
+    @Override
+	 public boolean equals(Object obj) {
+//	        return (this == obj);
+    	Employee e = (Employee) obj;
+		return this.id == e.id;
+	 }
+
+	@Override
+	public int compareTo(Employee o) {
+		return this.name.compareTo(o.name);
+	}
 
     
 }
