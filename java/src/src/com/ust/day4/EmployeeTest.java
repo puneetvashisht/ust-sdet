@@ -38,7 +38,9 @@ public class EmployeeTest {
 		
 		// Print all employees with letter first letter name 'S';
 		System.out.println(" -----Print all employees with letter first letter name 'S'  ----");
-		printEmployees(employees, (e) -> e.getName().startsWith("S"), (e)-> System.out.println(e));
+		Predicate<Employee> p = (e)->e.getName().startsWith("S");
+		Consumer<Employee> c = (e)-> System.out.println(e);
+		printEmployees(employees, p, c );
 //		for(Employee e : employees) {
 //			if(e.getName().startsWith("S")) {
 //				System.out.println(e);
