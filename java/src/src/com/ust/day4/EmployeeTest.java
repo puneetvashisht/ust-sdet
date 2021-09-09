@@ -2,10 +2,25 @@ package com.ust.day4;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 import com.ust.day2.Employee;
 
+//@FunctionalInterface
+//interface Condition{
+//	boolean test(Employee e);
+//}
+
 public class EmployeeTest {
+	
+	public static void printEmployees(List<Employee> employees, Predicate<Employee> condition, Consumer<Employee> consumer) {
+		for(Employee e : employees) {
+			if(condition.test(e)) {
+				consumer.accept(e);
+			}
+		}
+	}
 
 	public static void main(String[] args) {
 		List<Employee> employees = new ArrayList<>();
@@ -22,10 +37,30 @@ public class EmployeeTest {
 		
 		
 		// Print all employees with letter first letter name 'S';
+		System.out.println(" -----Print all employees with letter first letter name 'S'  ----");
+		printEmployees(employees, (e) -> e.getName().startsWith("S"), (e)-> System.out.println(e));
+//		for(Employee e : employees) {
+//			if(e.getName().startsWith("S")) {
+//				System.out.println(e);
+//			}
+//		}
 		
 		// Print all employees with salary > 300000
-		
+		System.out.println(" -----Print all employees with salary > 300000  ----");
+		printEmployees(employees, (e) -> e.getSalary() > 300000, (e)-> System.out.println(e));
+//		for(Employee e : employees) {
+//			if(e.getSalary() > 300000) {
+//				System.out.println(e);
+//			}
+//		}
 		// Print all employees
+		System.out.println(" -----Print all employees  ----" );
+		printEmployees(employees, (e) -> true, (e)-> System.out.println(e));
+//		for(Employee e : employees) {
+//			if(true) {
+//				System.out.println(e);
+//			}
+//		}
 
 	}
 
