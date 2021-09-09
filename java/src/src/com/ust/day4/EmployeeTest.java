@@ -17,6 +17,7 @@ public class EmployeeTest {
 		employees.add(e1);
 		employees.add(e2);
 		employees.add(e3);
+		employees.add(e4);
 		System.out.println(employees);
 		
 		
