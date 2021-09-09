@@ -6,7 +6,7 @@ public class Employee implements Comparable<Employee>{
 
     int id;
     String name;
-    double salary;
+    public double salary;
     List<Address> addresses;
 //    Department 
     
