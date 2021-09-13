@@ -42,16 +42,16 @@ public class JDBCDemo {
 		         e.printStackTrace();
 		      } 
 		
-//		Statement stmt;
-//		try {
-//			Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-//			stmt = conn.createStatement();
-//			int rs = stmt.executeUpdate(INSERT_QUERY);
-//			System.out.println(rs);
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		Statement stmt;
+		try {
+			Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+			stmt = conn.createStatement();
+			int rs = stmt.executeUpdate(INSERT_QUERY);
+			System.out.println(rs);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 //		
 
 //		try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
