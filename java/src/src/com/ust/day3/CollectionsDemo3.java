@@ -40,7 +40,7 @@ public class CollectionsDemo3 {
 		System.out.println(fruits.contains(new Fruit("Apple")));
 //		
 //		
-//		Collections.sort(fruits);
+		// Collections.sort(fruits);
 //		System.out.println(fruits);
 //		fruits.remove(0);
 //		System.out.println(fruits);

@@ -10,7 +10,14 @@ public class TestUser {
 		user1.changePassword("default");
 		System.out.println(user1);
 		
-		User user2 = new User("test2@test.com", "testtest2");
+		// User user2 = new User("test2@test.com", "testtest2");
+		User user2= user1;
+		if(user1 == user2){
+			System.out.println("same");
+		}
+		else{
+			System.out.println("different");
+		}
 		System.out.println(user2);
 		
 		

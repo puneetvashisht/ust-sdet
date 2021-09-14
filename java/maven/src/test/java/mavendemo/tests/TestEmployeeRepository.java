@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import mavendemo.entities.Employee;
 import mavendemo.repos.EmployeeRepository;
+//import mavendemo.threads.IncrementSalaryTask;
 
 public class TestEmployeeRepository {
 	
@@ -20,20 +21,20 @@ public class TestEmployeeRepository {
 		repo = new EmployeeRepository();	
 	}
 
-	@Test
+//	@Test
 	public void testfetchAllEmployees() {
 		List<Employee> employees = repo.fetchAllEmployees();
 		assertSame(4, employees.size());
 	}
 	
-	@Test
+//	@Test
 	public void testDeleteEmployee() {
 //		EmployeeRepository repo = new EmployeeRepository();
 		repo.deleteEmployee(2);
 		assertSame(3, repo.employees.size());
 	}
 	
-	@Test
+//	@Test
 	public void testAddEmployee() {
 //		EmployeeRepository repo = new EmployeeRepository();
 		
@@ -47,10 +48,16 @@ public class TestEmployeeRepository {
 	public void testIncrementSalaryOfEmployee() {
 //		EmployeeRepository repo = new EmployeeRepository();
 		
+		for(Employee e : EmployeeRepository.employees) {
+//			System.out.println(e);
+			repo.incrementSalary(e.getId(), 5000);
+			System.out.println(e);
+			
+		}
 		
-		repo.incrementSalary(23, 5000);
 		
-		assertEquals( 348433.44, repo.employees.get(0).getSalary(), 0.01);
+		
+//		assertEquals( 348433.44, repo.employees.get(0).getSalary(), 0.01);
 	}
 
 

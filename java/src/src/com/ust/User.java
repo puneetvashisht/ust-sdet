@@ -1,6 +1,6 @@
 package com.ust;
 
-public class User {
+public class User extends Object{
 
 	public String email;
 	public String password;

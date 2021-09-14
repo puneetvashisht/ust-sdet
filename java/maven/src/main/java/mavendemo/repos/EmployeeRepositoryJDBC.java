@@ -46,6 +46,29 @@ public class EmployeeRepositoryJDBC {
 		
 	}
 	
+	public int addEmployee(List<Employee> employees) {
+		int result = 0;
+		try {
+			Connection conn = getConnection();
+			final String INSERT_QUERY = "INSERT INTO emp VALUES (?, ?, ?)";
+			for(Employee e : employees) {
+				
+				PreparedStatement stmt = conn.prepareStatement(INSERT_QUERY);
+				stmt.setInt(1, e.getId());
+				stmt.setString(2, e.getName());
+				stmt.setDouble(3, e.getSalary());
+				result += stmt.executeUpdate();
+			}
+			
+			
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+		
+	}
+	
 	public List<Employee> fetchAllEmployees() {
 		ArrayList<Employee> employees = new ArrayList<>(); 
 		try {
@@ -90,8 +113,21 @@ public class EmployeeRepositoryJDBC {
 		return result;
 	}
 	
-//	public void incrementSalary(int id, int increaseBy) {
-//
-//	}
+	public int incrementSalary(int id, int increaseBy) {
+		int result = 0;
+		try {
+			Connection conn = getConnection();
+			final String DELETE_QUERY = "UPDATE emp set salary=? where id=?";
+			PreparedStatement stmt = conn.prepareStatement(DELETE_QUERY);
+			stmt.setDouble(1, increaseBy);
+			stmt.setInt(2, id);
+			result = stmt.executeUpdate();
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+
+	}
 
 }
