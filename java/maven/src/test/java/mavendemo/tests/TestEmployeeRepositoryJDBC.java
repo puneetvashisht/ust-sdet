@@ -1,11 +1,11 @@
 package mavendemo.tests;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -19,6 +19,11 @@ public class TestEmployeeRepositoryJDBC {
 	@Before
 	public void setUp() {
 		repo = new EmployeeRepositoryJDBC();	
+	}
+	
+	@After
+	public void tearDown() {
+		repo = null;	
 	}
 
 	@Test

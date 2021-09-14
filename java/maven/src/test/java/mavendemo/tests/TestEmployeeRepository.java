@@ -6,6 +6,7 @@ import static org.junit.Assert.assertSame;
 import java.util.List;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import mavendemo.entities.Employee;
@@ -14,23 +15,38 @@ import mavendemo.repos.EmployeeRepository;
 
 public class TestEmployeeRepository {
 	
-	EmployeeRepository repo;
+	static EmployeeRepository repo;
+	
+//	@BeforeClass
+//	public static void setUp() {
+//		System.out.println("***** Before all test cases .. but just once .. *****");
+//		repo = new EmployeeRepository();	
+//	}
 	
 	@Before
 	public void setUp() {
+		System.out.println("***** Before every test cases.. *****");
 		repo = new EmployeeRepository();	
 	}
 
 //	@Test
 	public void testfetchAllEmployees() {
 		List<Employee> employees = repo.fetchAllEmployees();
-		assertSame(4, employees.size());
+		assertSame(3, employees.size());
 	}
 	
 //	@Test
 	public void testDeleteEmployee() {
 //		EmployeeRepository repo = new EmployeeRepository();
 		repo.deleteEmployee(2);
+		assertSame(3, repo.employees.size());
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void testDeleteEmployeeWhichDoesntExist() {
+//		EmployeeRepository repo = new EmployeeRepository();
+		Integer id = -99;
+		repo.deleteEmployee(id);
 		assertSame(3, repo.employees.size());
 	}
 	
@@ -44,7 +60,7 @@ public class TestEmployeeRepository {
 		assertSame(5, repo.employees.size());
 	}
 	
-	@Test
+//	@Test
 	public void testIncrementSalaryOfEmployee() {
 //		EmployeeRepository repo = new EmployeeRepository();
 		

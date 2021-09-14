@@ -36,6 +36,14 @@ public class EmployeeRepository {
 	}
 	
 	public void deleteEmployee(int id) {
+		
+		System.out.println("Id is: " + id);
+		
+		if(id <= 0 ) {
+			System.out.println("Passed less than zero");
+			throw new RuntimeException("Id cannot be less than zero");
+		}
+		
 		List<Employee> remainingEmployees = employees.stream()
 		.filter((e)->e.getId() != id)
 		.collect(Collectors.toList());
