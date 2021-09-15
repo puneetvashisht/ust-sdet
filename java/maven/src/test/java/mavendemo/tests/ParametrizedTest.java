@@ -18,7 +18,7 @@ import mavendemo.util.MathUtils;
 public class ParametrizedTest {
 	@Parameters(name = "Run #Square of : {0}^2={1}")
 	public static Iterable<Object [] > data(){
-		return Arrays.asList(new Object [][]{ {1,1}, {2,4}, {3,19}, {4,16}, {5,25} });
+		return Arrays.asList(new Object [][]{ {1,1}, {2,4}, {3,9}, {4,16}, {5,25} });
 	}
 	
 	private final int input;

@@ -29,7 +29,7 @@ public class TestEmployeeRepositoryJDBC {
 	@Test
 	public void testfetchAllEmployees() {
 		List<Employee> employees = repo.fetchAllEmployees();
-		assertSame(4, employees.size());
+		assertSame(1, employees.size());
 	}
 //	
 //	@Test

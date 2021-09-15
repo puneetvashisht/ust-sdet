@@ -18,7 +18,7 @@ public class EmployeeRepositoryJDBC {
 	
 	static final String DB_URL = "jdbc:mysql://localhost/ustdb";
 	static final String USER = "root";
-	static final String PASS = "rootroot";
+	static final String PASS = "root";
 	
 	public static Connection getConnection() throws SQLException {
 		Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
