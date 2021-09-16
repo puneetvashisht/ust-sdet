@@ -32,14 +32,14 @@ public class TestEmployeeRepositoryJDBC {
 		assertSame(1, employees.size());
 	}
 //	
-//	@Test
+	@Test
 	public void testDeleteEmployee() {
 //		EmployeeRepository repo = new EmployeeRepository();
 		int result = repo.deleteEmployee(5);
 		assertSame(1, result);
 	}
 	
-//	@Test
+	@Test
 	public void testAddEmployee() {
 //		EmployeeRepository repo = new EmployeeRepository();
 		
@@ -52,7 +52,7 @@ public class TestEmployeeRepositoryJDBC {
 	}
 	
 	
-//	@Test
+	@Test
 	public void testAddAllEmployee() {
 //		EmployeeRepository repo = new EmployeeRepository();
 		
@@ -66,7 +66,7 @@ public class TestEmployeeRepositoryJDBC {
 		assertSame(2, result);
 	}
 	
-//	@Test
+	@Test
 	public void testIncrementSalaryOfEmployee() {
 //		EmployeeRepository repo = new EmployeeRepository();
 		

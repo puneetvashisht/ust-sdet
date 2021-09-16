@@ -45,7 +45,7 @@ public class EmployeeRepository {
 		}
 		
 		List<Employee> remainingEmployees = employees.stream()
-		.filter((e)->e.getId() != id)
+		.filter(e->e.getId() != id)
 		.collect(Collectors.toList());
 		
 		this.employees = remainingEmployees;
@@ -55,19 +55,18 @@ public class EmployeeRepository {
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
+	
 			e1.printStackTrace();
 		}
 		employees.stream()
-		.filter((e)->e.getId() == id)
+		.filter(e->e.getId() == id)
 //		.map((e)-> {
 //			e.setSalary(e.getSalary() + increaseBy);
 //			return e;
 //		})
-		.forEach((e)-> {
-			e.setSalary(e.getSalary() + increaseBy);
-//			System.out.println(e);
-		});
+		.forEach(e-> 
+			e.setSalary(e.getSalary() + increaseBy)
+		);
 	}
 
 }
