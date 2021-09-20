@@ -5,11 +5,17 @@ import java.util.Date;
 import mavendemo.entities.Workout;
 import mavendemo.exception.ServiceException;
 
+
+// Business Logic
 public interface WorkoutService{
 	
 	boolean createWorkout(Workout workout) throws ServiceException;
+	// if workout title is missing.. throw ServiceException
+	
 //	if the workout already present, return false
 //	return true, if workout is successfully created
+	
+	
 
 	boolean deleteWorkout(int workoutId) throws ServiceException;
 
