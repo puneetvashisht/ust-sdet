@@ -1,5 +1,18 @@
-<h2>My App</h2>
+<!-- <h2>My App</h2>
 <my-badge caption="Sent"></my-badge>
 <my-badge caption="Inbox"></my-badge>
 <my-badge caption="Spam"></my-badge>
-<my-badge></my-badge>
+<my-badge></my-badge> -->
+<div class="container">
+
+    <div class="row">
+        <app-card *ngFor="let course of courses" class="col" [title]="course.title">{{course.summary}}</app-card>
+        <!-- <app-card class="col" title="React"></app-card>
+        <app-card class="col" title="Angular"></app-card>
+        <app-card class="col" title="React"></app-card>
+        <app-card class="col" title="Angular"></app-card>
+        <app-card class="col" title="React"></app-card>
+        <app-card class="col" title="Angular"></app-card>
+        <app-card class="col" title="React"></app-card> -->
+    </div>
+</div>
