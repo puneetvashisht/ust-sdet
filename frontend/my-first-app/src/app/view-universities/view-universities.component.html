@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Country</th>
+        <th scope="col">Name</th>
+        <th scope="col">Country Code</th>
+        <th scope="col">Domains</th>
+        <th scope="col">Web Pages</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let university of universities;let i=index">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{university.country}}</td>
+        <td>{{university.name}}</td>
+        <td>{{university.alpha_two_code}}</td>
+        <td>{{university.domains}}</td>
+        <td>{{university.web_pages}}</td>
+      </tr>
+     
+    </tbody>
+  </table>
+

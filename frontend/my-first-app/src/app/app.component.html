@@ -4,7 +4,16 @@
 <my-badge caption="Spam"></my-badge>
 <my-badge></my-badge> -->
 <div class="container">
-
+    <div class="row">
+        <app-alert></app-alert>
+    </div>
+    <div class="row">
+        <app-view-universities></app-view-universities>
+    </div>
+    <div class="row">
+        <app-table [courses]="courses"></app-table>
+        <!-- <app-table></app-table> -->
+    </div>
     <div class="row">
         <app-card *ngFor="let course of courses" class="col" [title]="course.title">{{course.summary}}</app-card>
         <!-- <app-card class="col" title="React"></app-card>

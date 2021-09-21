@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Summary</th>
+        <th scope="col">Not Used</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of courses;let i=index">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{course.title}}</td>
+        <td>{{course.summary}}</td>
+        <td>@mdo</td>
+      </tr>
+     
+    </tbody>
+  </table>
+
+
+  <!-- for(Course course: courses) -->

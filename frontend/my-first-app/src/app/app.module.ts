@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AlertComponent } from './alert.component';
+import {HttpClientModule} from '@angular/common/http';
 
-import { AppComponent } from './app.component';
-import { BadgeComponent } from './badge.component';
-import { CardComponent } from './card/card.component';
+import { ViewUniversitiesComponent } from './view-universities/view-universities.component';
 
 @NgModule({
   declarations: [
-    AppComponent, BadgeComponent, CardComponent
+    ViewUniversitiesComponent
+    // AppComponent, BadgeComponent, CardComponent, TableComponent, AlertComponent, ViewUniversitiesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ViewUniversitiesComponent]
 })
 export class AppModule { }
