@@ -1,0 +1,14 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "Abhinav Asthana"
+    },
+    {
+      "title": "postman",
+      "author": "Abhinav Asthana",
+      "id": 3
+    }
+  ]
+}
