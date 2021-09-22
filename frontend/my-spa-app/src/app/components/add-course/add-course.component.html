@@ -1,0 +1,12 @@
+<div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Title</span>
+    <input type="text" #title (keyup)="0" class="form-control" placeholder="Enter Title" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Author</span>
+    <input type="text" #author (keyup)="0" class="form-control" placeholder="Enter Author" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+  <div class="input-group mb-3">
+    
+    <button class="btn btn-primary" (click)="addCourse(title.value, author.value)">Add Course</button>
+  </div>

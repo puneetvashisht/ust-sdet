@@ -6,6 +6,10 @@ import {HttpClientModule} from '@angular/common/http';
 import { ViewUniversitiesComponent } from './view-universities/view-universities.component';
 import { ViewCoursesComponent } from './view-courses/view-courses.component';
 import { AddCourseComponent } from './add-course/add-course.component';
+// import { RouterModule, Routes } from '@angular/router';
+
+
+
 
 @NgModule({
   declarations: [
@@ -15,7 +19,8 @@ import { AddCourseComponent } from './add-course/add-course.component';
     // AppComponent, BadgeComponent, CardComponent, TableComponent, AlertComponent, ViewUniversitiesComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule
+    BrowserModule, HttpClientModule,
+    // RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [ViewCoursesComponent]

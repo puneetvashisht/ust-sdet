@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { CourseService } from '../course.service';
+import { CourseService } from '../../services/course.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-view-courses',
   templateUrl: './view-courses.component.html',
   styleUrls: ['./view-courses.component.css']
 })
