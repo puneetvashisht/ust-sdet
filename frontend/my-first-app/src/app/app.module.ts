@@ -4,16 +4,20 @@ import { AlertComponent } from './alert.component';
 import {HttpClientModule} from '@angular/common/http';
 
 import { ViewUniversitiesComponent } from './view-universities/view-universities.component';
+import { ViewCoursesComponent } from './view-courses/view-courses.component';
+import { AddCourseComponent } from './add-course/add-course.component';
 
 @NgModule({
   declarations: [
-    ViewUniversitiesComponent
+    // ViewUniversitiesComponent,
+    ViewCoursesComponent,
+    AddCourseComponent
     // AppComponent, BadgeComponent, CardComponent, TableComponent, AlertComponent, ViewUniversitiesComponent
   ],
   imports: [
     BrowserModule, HttpClientModule
   ],
   providers: [],
-  bootstrap: [ViewUniversitiesComponent]
+  bootstrap: [ViewCoursesComponent]
 })
 export class AppModule { }
