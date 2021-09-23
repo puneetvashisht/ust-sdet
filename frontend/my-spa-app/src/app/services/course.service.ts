@@ -23,4 +23,8 @@ export class CourseService {
     return this.http.post( environment.baseUrl, course)
   }
 
+  updateCourse(id: string|null, course: any){
+    return this.http.patch( environment.baseUrl + id, course)
+  }
+
 }

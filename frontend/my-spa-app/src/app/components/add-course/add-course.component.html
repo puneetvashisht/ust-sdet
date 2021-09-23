@@ -1,3 +1,7 @@
+<div *ngIf="showMessage" class="alert alert-success" role="alert">
+  Course successfully added!
+</div>
+
 <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1">Title</span>
     <input type="text" #title (keyup)="0" class="form-control" placeholder="Enter Title" aria-label="Username" aria-describedby="basic-addon1">

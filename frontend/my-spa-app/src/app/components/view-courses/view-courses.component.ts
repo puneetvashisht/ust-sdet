@@ -10,16 +10,18 @@ import { CourseService } from '../../services/course.service';
 export class ViewCoursesComponent implements OnInit {
 
   courses: Array<any> = [];
+  showMessage: boolean = false;
 
   deleteCourse(id: number){
     this.courseService.deleteCourse(id)
     .subscribe((res: any) => {
       console.log(res);
       // this.courses = res;
+      this.showMessage = true;
     });
   }
 
-  constructor(private http: HttpClient, private courseService: CourseService) { }
+  constructor( private courseService: CourseService) { }
 
   ngOnInit(): void {
     console.log('Called once on load of the component');

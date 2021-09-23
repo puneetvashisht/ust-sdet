@@ -1,3 +1,6 @@
+<div *ngIf="showMessage" class="alert alert-success" role="alert">
+  Course successfully deleted!
+</div>
 
 <table class="table">
     <thead>
@@ -11,7 +14,7 @@
     <tbody>
       <tr *ngFor="let course of courses;let i=index">
         <th scope="row">{{i + 1}}</th>
-        <td>{{course.title}}</td>
+        <td><a class="nav-link active" routerLink="/update/{{course.id}}">{{course.title}}</a></td>
         <td>{{course.author}}</td>
         <td><button (click)="deleteCourse(course.id)" class="btn btn-danger"> X </button></td>
 
