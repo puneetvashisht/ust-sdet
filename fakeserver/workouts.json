@@ -1,0 +1,31 @@
+{
+  "workouts": [
+    {
+      "id": 1,
+      "title": "Swimming",
+      "desc": "overall fitness",
+      "cbpm": 23,
+      "startTime": "2021-09-27T05:10:41.156Z",
+      "endTime": "2021-09-27T05:12:59.919Z"
+    },
+    {
+      "id": 2,
+      "title": "Running",
+      "desc": "overall fitness",
+      "cbpm": 18,
+      "startTime": "2021-09-27T05:13:37.372Z"
+    },
+    {
+      "title": "Backstroke Swimming",
+      "desc": "Really good ",
+      "cbpm": "23",
+      "id": 3
+    },
+    {
+      "title": "Frontfly Swimming",
+      "desc": "Really good ",
+      "cbpm": "22",
+      "id": 4
+    }
+  ]
+}

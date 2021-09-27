@@ -1,0 +1,34 @@
+<div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Search</span>
+    <input type="text" #search (keyup)="0" class="form-control" placeholder="Search a workout" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Calories Burnt Per Minute</th>
+        <th scope="col">Start Time</th>
+        <th scope="col">End Time</th>
+        <th scope="col">Total Calories Burnt</th>
+        <th scope="col" colspan="3">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let workout of workouts | searchWorkout:search.value">
+        <th scope="row">{{workout.id}}</th>
+        <td>{{workout.title | uppercase}}</td>
+        <td>{{workout.desc}}</td>
+        <td>{{workout.cbpm}}</td>
+        <td>{{workout.startTime | date: 'mediumTime'}}</td>
+        <td>{{workout.endTime | date: 'mediumTime'}}</td>
+        <td>time * cbpm</td>
+        <td><button (click)="deleteWorkout(workout.id)" class="btn btn-danger"> X </button></td>
+        <td><button (click)="startWorkout(workout.id)" class="btn btn-primary"> Start </button></td>
+        <td><button (click)="endWorkout(workout.id)" class="btn btn-primary"> End </button></td>
+
+      </tr>
+     
+    </tbody>
+  </table>

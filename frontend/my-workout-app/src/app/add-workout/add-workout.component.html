@@ -1,0 +1,17 @@
+
+<div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Title</span>
+    <input type="text" #title (keyup)="0" class="form-control" placeholder="Enter Title" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Description</span>
+    <input type="text" #desc (keyup)="0" class="form-control" placeholder="Enter Desc" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Calories Burnt Per Minute</span>
+    <input type="number" #cbpm (keyup)="0" class="form-control" placeholder="Enter Calories Burnt Per Minute" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+  <div class="input-group mb-3">
+    
+    <button class="btn btn-primary" (click)="addWorkout(title.value, desc.value, cbpm.value)">Add Workout</button>
+  </div>
