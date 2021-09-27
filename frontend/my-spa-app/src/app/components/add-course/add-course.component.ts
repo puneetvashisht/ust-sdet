@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../../services/course.service';
 
@@ -9,6 +9,8 @@ import { CourseService } from '../../services/course.service';
 })
 export class AddCourseComponent implements OnInit {
 
+  showMessage: boolean = false;
+
   constructor(private courseService: CourseService) { }
 
 
@@ -17,7 +19,9 @@ export class AddCourseComponent implements OnInit {
     this.courseService.addCourse({title,author})
     .subscribe((res: any) => {
       console.log(res);
+      // this._snackBar.open("Course Added Successfully!!", "Close");
       // this.courses = res;
+      this.showMessage = true;
     });
   }
 
