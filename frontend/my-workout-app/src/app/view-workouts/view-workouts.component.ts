@@ -16,6 +16,9 @@ export class ViewWorkoutsComponent implements OnInit {
       .subscribe((res: any) => {
         console.log(res);
         // this.courses = res;
+        let remainingWorkouts = this.workouts.filter(workout => workout.id != id)
+        this.workouts = remainingWorkouts;
+
       });
   }
 
