@@ -23,7 +23,7 @@
         <td>{{workout.cbpm}}</td>
         <td>{{workout.startTime | date: 'mediumTime'}}</td>
         <td>{{workout.endTime | date: 'mediumTime'}}</td>
-        <td>time * cbpm</td>
+        <td>time * cbpm  </td>
         <td><button (click)="deleteWorkout(workout.id)" class="btn btn-danger"> X </button></td>
         <td><button (click)="startWorkout(workout.id)" class="btn btn-primary"> Start </button></td>
         <td><button (click)="endWorkout(workout.id)" class="btn btn-primary"> End </button></td>
