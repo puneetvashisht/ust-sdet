@@ -10,7 +10,7 @@ export class SearchPipe implements PipeTransform {
     console.log(workouts);
     console.log(searchValue)
 
-    let filteredWorkouts = workouts.filter(workout=> workout.title.includes(searchValue))
+    let filteredWorkouts = workouts.filter(workout=> workout.title.toLowerCase().includes(searchValue.toLowerCase()))
 
     return filteredWorkouts;
   }
