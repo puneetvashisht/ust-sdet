@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine-browser-runner runSpecs"
+    "test": "karma start"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +13,9 @@
     "jasmine-core": "^3.9.0",
     "karma": "^6.3.4",
     "karma-chrome-launcher": "^3.1.0",
-    "karma-jasmine": "^4.0.1"
+    "karma-coverage": "^2.0.3",
+    "karma-htmlfile-reporter": "^0.3.8",
+    "karma-jasmine": "^4.0.1",
+    "karma-sonarqube-reporter": "^1.4.0"
   }
 }

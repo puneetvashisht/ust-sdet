@@ -4,6 +4,9 @@
 module.exports = function(config) {
   config.set({
 
+
+   
+
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
@@ -28,13 +31,33 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://www.npmjs.com/search?q=keywords:karma-preprocessor
     preprocessors: {
+      'src/**/*.js': ['coverage']
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://www.npmjs.com/search?q=keywords:karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage', 'html'],
+
+    htmlReporter: {
+      outputFile: 'tests/units.html',
+            
+      // Optional
+      pageTitle: 'Unit Tests',
+      subPageTitle: 'A sample project description',
+      groupSuites: true,
+      useCompactStyle: true,
+      useLegacyStyle: true,
+      showOnlyFailed: false
+    },
+
+
+
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
+    },
 
 
     // web server port
