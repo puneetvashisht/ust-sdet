@@ -1,0 +1,15 @@
+{
+  "name": "basicjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "calc.js",
+  "scripts": {
+    "start": "node calc.js",
+    "test": "jasmine"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^3.9.0"
+  }
+}
