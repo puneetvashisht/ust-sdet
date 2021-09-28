@@ -10,3 +10,8 @@
         karma init --> Generate karma.conf.js and change the files section
 
         karma start --> Run test cases on the browser
+
+
+        For coverage and html reports 
+
+        # npm install --save-dev karma-htmlfile-reporter karma-coverage
