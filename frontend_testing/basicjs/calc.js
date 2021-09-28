@@ -23,4 +23,4 @@
 	}
 	
 
- module.exports = {add, mul, div, primeNumber}
+//  module.exports = {add, mul, div, primeNumber}

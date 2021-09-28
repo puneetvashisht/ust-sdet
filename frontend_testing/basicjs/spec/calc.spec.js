@@ -1,4 +1,4 @@
-const calc = require('../calc')
+// const calc = require('../calc')
 
 describe("Calc suite", function() {
 
@@ -18,13 +18,13 @@ describe("Calc suite", function() {
     });
 
     it("sum of 2 & 3 to be 5", ()=>{
-      let result = calc.add(2,3);
+      let result = add(2,3);
       console.log(result);
       expect(result).toBe(5);
     })
 
     it("mul of 2 & 3 to be 6", ()=>{
-      let result = calc.mul(3,2);
+      let result = mul(3,2);
       console.log(result);
       expect(result).toBe(6);
       expect(result).toBeGreaterThan(3);

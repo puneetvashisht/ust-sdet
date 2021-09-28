@@ -1,4 +1,4 @@
-import {add, mul} from '../src/calc'
+
 
 describe("Calc suite", function() {
 
@@ -11,10 +11,10 @@ describe("Calc suite", function() {
   // });
 
     // @Test
-    xit("contains spec with an expectation", function() {
+    it("contains spec with an expectation", function() {
         //assert
       expect(true).toBe(true);
-      fail("Callback has been called");
+      // fail("Callback has been called");
     });
 
     it("sum of 2 & 3 to be 5", ()=>{
