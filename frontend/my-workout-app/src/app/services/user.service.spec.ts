@@ -5,7 +5,7 @@ describe('Userservice without Angular testing support', () => {
 
     it('#getValue should return real value from the real service', () => {
         userService = new UserService();
-        expect(userService.isLoggedIn).toBe(true);
+        expect(userService.isLoggedIn).toBe(false);
         expect(userService.user.name).toBe('Test User');
       });
 

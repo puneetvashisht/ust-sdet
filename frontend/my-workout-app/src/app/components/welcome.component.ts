@@ -3,7 +3,8 @@ import { UserService } from "../services/user.service";
 
 @Component({
     selector: 'app-welcome',
-    template: 'Welcome component', 
+    template: `<p>{{welcome}}</p>
+    `, 
   })
 export class WelcomeComponent implements OnInit {
     welcome = '';
@@ -11,6 +12,12 @@ export class WelcomeComponent implements OnInit {
   
     ngOnInit(): void {
       this.welcome = this.userService.isLoggedIn ?
+        'Welcome, ' + this.userService.user.name : 'Please log in.';
+    }
+
+    logout(){
+        this.userService.isLoggedIn = false;
+        this.welcome = this.userService.isLoggedIn ?
         'Welcome, ' + this.userService.user.name : 'Please log in.';
     }
   }
