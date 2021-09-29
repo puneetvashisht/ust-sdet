@@ -7,13 +7,17 @@ import { ViewWorkoutsComponent } from './view-workouts/view-workouts.component';
 import { AddWorkoutComponent } from './add-workout/add-workout.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchPipe } from './search.pipe';
+import { LightswitchComponent } from './components/lightswitch.component';
+import { WelcomeComponent } from './components/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewWorkoutsComponent,
     AddWorkoutComponent,
-    SearchPipe
+    SearchPipe,
+    LightswitchComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
