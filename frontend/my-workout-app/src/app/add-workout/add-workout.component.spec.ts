@@ -1,25 +1,36 @@
-// import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { WorkoutService } from '../workout.service';
 
-// import { AddWorkoutComponent } from './add-workout.component';
+import { AddWorkoutComponent } from './add-workout.component';
 
-// describe('AddWorkoutComponent', () => {
-//   let component: AddWorkoutComponent;
-//   let fixture: ComponentFixture<AddWorkoutComponent>;
 
-//   beforeEach(async () => {
-//     await TestBed.configureTestingModule({
-//       declarations: [ AddWorkoutComponent ]
-//     })
-//     .compileComponents();
-//   });
+class MockUserService {
+    isLoggedIn = true;
+    user = { name: 'Ravi'};
+  }
 
-//   beforeEach(() => {
-//     fixture = TestBed.createComponent(AddWorkoutComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
+describe('AddWorkoutComponent', () => {
+  let component: AddWorkoutComponent;
+  let fixture: ComponentFixture<AddWorkoutComponent>;
 
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
-//   });
-// });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ AddWorkoutComponent ],
+      providers: [
+        AddWorkoutComponent,
+        { provide: WorkoutService, useClass: MockUserService }
+      ]
+    })
+    .compileComponents();
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AddWorkoutComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
