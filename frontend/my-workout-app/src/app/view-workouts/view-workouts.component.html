@@ -16,14 +16,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let workout of workouts | searchWorkout:search.value">
+      <tr *ngFor="let workout of workouts | searchWorkout:search.value" class="therow">
         <th scope="row">{{workout.id}}</th>
-        <td>{{workout.title}}</td>
+        <td class="title">{{workout.title}}</td>
         <td>{{workout.desc}}</td>
         <td>{{workout.cbpm}}</td>
         <td>{{workout.startTime | date: 'mediumTime'}}</td>
         <td>{{workout.endTime | date: 'mediumTime'}}</td>
-        <td>{{workout.totalCaloriesBurnt? workout.totalCaloriesBurnt: 0 }}</td>
+        <td class="totalcals">{{workout.totalCaloriesBurnt? workout.totalCaloriesBurnt: 0 }}</td>
         <td><button (click)="deleteWorkout(workout.id)" class="btn btn-danger"> X </button></td>
         <td><button [disabled]="workout.startTime" (click)="startWorkout(workout.id)" class="btn btn-primary"> Start </button></td>
         <td><button [disabled]="!workout.startTime || workout.endTime" (click)="endWorkout(workout.id)" class="btn btn-primary"> End </button></td>
