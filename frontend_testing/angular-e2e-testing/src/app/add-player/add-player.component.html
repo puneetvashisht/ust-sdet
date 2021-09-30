@@ -1,0 +1,46 @@
+<!-- Button trigger modal -->
+<button (click)="showModal = true; initPlayer()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenterAdd">
+    Add player
+  </button>
+  
+  <!-- Modal -->
+  <div *ngIf="showModal" class="modal fade" id="exampleModalCenterAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitleAdd">New Player</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputName4">Name</label>
+                    <input [(ngModel)]="newPlayer.name" name="name" type="text" class="form-control" id="inputName4" placeholder="Name">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputAge4">Age</label>
+                    <input [(ngModel)]="newPlayer.age" name="age" type="text" class="form-control" id="inputAge4" placeholder="Age">
+                  </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputClub4">Club</label>
+                      <input [(ngModel)]="newPlayer.club" name="club" type="text" class="form-control" id="inputClub4" placeholder="Club">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputCountry4">Country</label>
+                      <input [(ngModel)]="newPlayer.country" name="country" type="text" class="form-control" id="inputCountry4" placeholder="Country">
+                    </div>
+                  </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button (click)="showModal= false" #closebutton type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button (click)="save()" type="button" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
