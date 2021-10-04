@@ -13,7 +13,8 @@ export class WorkoutService {
   constructor(private http: HttpClient) { }
 
   fetchAllWorkouts(){
-    return this.http.get( environment.baseUrl);
+    // return this.http.get( environment.baseUrl);
+    return this.http.get( 'http://localhost:8080/workouts');
   }
   deleteWorkout(id: number){
     return this.http.delete( environment.baseUrl + id)
@@ -24,7 +25,7 @@ export class WorkoutService {
   }
 
   addWorkout(workout: any){
-    return this.http.post( environment.baseUrl, workout)
+    return this.http.post('http://localhost:8080/workouts', workout)
   }
 
 }
