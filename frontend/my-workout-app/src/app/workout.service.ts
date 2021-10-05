@@ -14,18 +14,18 @@ export class WorkoutService {
 
   fetchAllWorkouts(){
     // return this.http.get( environment.baseUrl);
-    return this.http.get( 'http://localhost:8080/workouts');
+    return this.http.get( 'http://localhost:8080/workouts/');
   }
   deleteWorkout(id: number){
-    return this.http.delete( environment.baseUrl + id)
+    return this.http.delete( 'http://localhost:8080/workouts/' + id)
   }
 
   startEndWorkout(id: number, obj: any){
-    return this.http.patch( environment.baseUrl + id, obj)
+    return this.http.patch( 'http://localhost:8080/workouts/' + id, obj)
   }
 
   addWorkout(workout: any){
-    return this.http.post('http://localhost:8080/workouts', workout)
+    return this.http.post('http://localhost:8080/workouts/', workout)
   }
 
 }
