@@ -51,6 +51,11 @@ public class WorkoutController {
 		return re = new ResponseEntity<Workout>(HttpStatus.NOT_FOUND);
 	}
 	
+	@GetMapping("/bytitle/{title}")
+	public List<Workout> fetchWorkoutByWorkoutTitle(@PathVariable(value = "title") String title){
+		return workoutRepository.findByTitle(title);
+	}
+	
 	
 	@GetMapping("/by")
 	public List<Workout> fetchWorkoutByTitle(@RequestParam(value = "title", required = false) String title, @RequestParam(value = "cbpm", required = false) String cbpm){
