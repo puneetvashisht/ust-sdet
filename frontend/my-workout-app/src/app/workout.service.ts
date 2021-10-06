@@ -25,7 +25,7 @@ export class WorkoutService {
   }
 
   addWorkout(workout: any){
-    return this.http.post('http://localhost:8080/workouts/', workout)
+    return this.http.post('http://localhost:8080/workouts/', { observe: 'response' }, workout)
   }
 
 }

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.workoutapp.entities.Workout;
@@ -49,6 +51,23 @@ public class WorkoutController {
 		return re = new ResponseEntity<Workout>(HttpStatus.NOT_FOUND);
 	}
 	
+	
+	@GetMapping("/by")
+	public List<Workout> fetchWorkoutByTitle(@RequestParam(value = "title", required = false) String title, @RequestParam(value = "cbpm", required = false) String cbpm){
+		System.out.println(title);
+		System.out.println(cbpm);
+		if(title!=null && title!="") {
+			return workoutRepository.findByTitle(title);
+		}
+		
+		if(cbpm!=null && cbpm!="") {
+			int c = Integer.valueOf(cbpm);
+			System.out.println(c);
+			return workoutRepository.findByCbpmGreaterThan(c);
+		}
+		return null;
+	}
+	
 //	@RequestMapping(path = "/workouts/{workoutid}", method = RequestMethod.PATCH)
 	@PatchMapping("/{workoutid}")
 	public void startEndWorkout(@PathVariable("workoutid") int workoutId, @RequestBody Workout workout){
@@ -81,19 +100,28 @@ public class WorkoutController {
 	
 //	@RequestMapping(path = "/workouts", method = RequestMethod.POST)
 	@PostMapping("/")
-	public void addWorkout(@RequestBody Workout workout){
+	public ResponseEntity<Void> addWorkout(@RequestBody Workout workout){
 		System.out.println("add a workout method is invoked...");
 		System.out.println(workout);
 		// db insert
 		workoutRepository.save(workout);
+		ResponseEntity<Void> re = new ResponseEntity<Void>(HttpStatus.CREATED);
+		return re;
 	}
 	
 	
 //	@RequestMapping(path = "/workouts/{workoutid}", method = RequestMethod.DELETE)
 	@DeleteMapping("/{workoutid}")
-	public void deleteWorkout(@PathVariable("workoutid") int workoutId){
-		System.out.println(workoutId);
-		workoutRepository.deleteById(workoutId);
+	public ResponseEntity<Void> deleteWorkout(@PathVariable("workoutid") int workoutId){
+		ResponseEntity<Void> re = new ResponseEntity<Void>(HttpStatus.OK);
+		try {
+			workoutRepository.deleteById(workoutId);
+		}
+		catch(EmptyResultDataAccessException e) {
+			re= new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+		}
+		
+		return re;
 	}
 	
 

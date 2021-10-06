@@ -10,6 +10,7 @@ import { WorkoutService } from '../workout.service';
 export class ViewWorkoutsComponent implements OnInit {
 
   workouts: Array<Workout> = []
+  message: string = ''
 
   deleteWorkout(id: number) {
     this.workoutService.deleteWorkout(id)
@@ -18,6 +19,7 @@ export class ViewWorkoutsComponent implements OnInit {
         // this.courses = res;
         let remainingWorkouts = this.workouts.filter(workout => workout.id != id)
         this.workouts = remainingWorkouts;
+        this.message = 'Workout deleted successfully!'
 
       });
   }
@@ -26,6 +28,7 @@ export class ViewWorkoutsComponent implements OnInit {
     this.workoutService.startEndWorkout(id, { startTime: new Date() })
       .subscribe((res: any) => {
         console.log(res);
+        this.message = 'Workout started successfully!'
       });
   }
 
@@ -33,6 +36,7 @@ export class ViewWorkoutsComponent implements OnInit {
     this.workoutService.startEndWorkout(id, { endTime: new Date() })
       .subscribe((res: any) => {
         console.log(res);
+        this.message = 'Workout ended successfully!'
       });
   }
 

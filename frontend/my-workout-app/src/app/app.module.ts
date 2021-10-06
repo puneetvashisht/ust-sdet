@@ -9,7 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchPipe } from './search.pipe';
 import { LightswitchComponent } from './components/lightswitch.component';
 import { WelcomeComponent } from './components/welcome.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import {NgbdToastInline} from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { WelcomeComponent } from './components/welcome.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

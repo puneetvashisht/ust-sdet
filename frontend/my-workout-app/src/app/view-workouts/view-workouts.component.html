@@ -1,3 +1,8 @@
+<div>
+  <ngb-toast *ngIf="message" header="Notification!" [autohide]="false" (hidden)="message=''">
+    {{message}}
+  </ngb-toast>
+</div>
 <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1">Search</span>
     <input type="text" #search (keyup)="0" class="form-control" placeholder="Search a workout" aria-label="Username" aria-describedby="basic-addon1">
