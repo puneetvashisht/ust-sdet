@@ -14,6 +14,11 @@ public class User {
 	
 	String email;
 	String password;
+	
+	
+//	@ManyToOne
+//	Workout workout
+	
 	public int getId() {
 		return id;
 	}
