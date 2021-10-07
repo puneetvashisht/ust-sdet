@@ -1,10 +1,14 @@
 package com.example.workoutapp.entities;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 // mapping java class to db
 
@@ -21,8 +25,20 @@ public class Workout {
 	String startTime;
 	String endTime;
 	
-	
-	
+//	@OneToOne(cascade = CascadeType.ALL)
+//	User user;
+	@OneToMany(cascade = CascadeType.ALL)
+	List<User> users;
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+
+
 	public int getId() {
 		return id;
 	}

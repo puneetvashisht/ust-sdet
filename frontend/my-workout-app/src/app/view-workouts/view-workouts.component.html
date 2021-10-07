@@ -17,6 +17,7 @@
         <th scope="col">Start Time</th>
         <th scope="col">End Time</th>
         <th scope="col">Total Calories Burnt</th>
+        <th scope="col">Assigned to Users</th>
         <th scope="col" colspan="3">Actions</th>
       </tr>
     </thead>
@@ -29,6 +30,11 @@
         <td>{{workout.startTime | date: 'mediumTime'}}</td>
         <td>{{workout.endTime | date: 'mediumTime'}}</td>
         <td class="totalcals">{{workout.totalCaloriesBurnt? workout.totalCaloriesBurnt: 0 }}</td>
+        <td>
+          <ul *ngIf="workout.users">
+             <li *ngFor="let user of workout.users">{{user.email}}</li>
+          </ul>
+        </td>
         <td><button (click)="deleteWorkout(workout.id)" class="btn btn-danger"> X </button></td>
         <td><button [disabled]="workout.startTime" (click)="startWorkout(workout.id)" class="btn btn-primary"> Start </button></td>
         <td><button [disabled]="!workout.startTime || workout.endTime" (click)="endWorkout(workout.id)" class="btn btn-primary"> End </button></td>

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.workoutapp.entities.User;
 import com.example.workoutapp.entities.Workout;
 
 // Http endpoint
@@ -43,12 +44,12 @@ public class WorkoutController {
 	@GetMapping("/{workoutid}")
 	public ResponseEntity<Workout> fetchWorkoutById(@PathVariable("workoutid") int workoutId){
 		ResponseEntity<Workout> re = null;
-		Optional<Workout> workoutFound = workoutRepository.findById(workoutId);
-		if(workoutFound.isPresent()) {
-			re = new ResponseEntity<Workout>(workoutFound.get(), HttpStatus.OK);
-			return re;
-		}
-		return re = new ResponseEntity<Workout>(HttpStatus.NOT_FOUND);
+		Workout workoutFound = workoutRepository.findById(workoutId);
+//		if(workoutFound.isPresent()) {
+//			re = new ResponseEntity<Workout>(workoutFound.get(), HttpStatus.OK);
+//			return re;
+//		}
+		return re = new ResponseEntity<Workout>(workoutFound, HttpStatus.OK);
 	}
 	
 	@GetMapping("/bytitle/{title}")
@@ -73,6 +74,21 @@ public class WorkoutController {
 		return null;
 	}
 	
+	@PatchMapping("/{workoutid}/assigntouser")
+	public void assignWorkoutToUser(@PathVariable("workoutid") int workoutId, @RequestBody User user) {
+		Workout workout = workoutRepository.findById(workoutId);
+		System.out.println(workout);
+//		System.out.println(workout.getUsers());
+		List<User> users = workout.getUsers();
+		users.add(user);
+		workout.setUsers(users);
+		
+		
+		workoutRepository.save(workout);
+
+		
+	}
+	
 //	@RequestMapping(path = "/workouts/{workoutid}", method = RequestMethod.PATCH)
 	@PatchMapping("/{workoutid}")
 	public void startEndWorkout(@PathVariable("workoutid") int workoutId, @RequestBody Workout workout){
@@ -82,11 +98,11 @@ public class WorkoutController {
 
 		Workout workoutToBeUpdated = null; 
 		// find an existing workout
-		Optional<Workout> workoutFound = workoutRepository.findById(workoutId);
-		if(workoutFound.isPresent()) {
-			workoutToBeUpdated = workoutFound.get();
-		}
-		
+		 workoutToBeUpdated = workoutRepository.findById(workoutId);
+//		if(workoutFound.isPresent()) {
+//			workoutToBeUpdated = workoutFound.get();
+//		}
+//		
 //		update start time if present
 		if(workout.getStartTime()!=null && workout.getStartTime()!="") {
 			workoutToBeUpdated.setStartTime(workout.getStartTime());

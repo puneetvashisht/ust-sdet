@@ -14,6 +14,8 @@ public interface WorkoutRepository extends JpaRepository<Workout, Integer>{
 //	@Query("SELECT n from #{#entityName} n WHERE n.title = ?1")
 	List<Workout> findByTitle(String title);
 	
+	Workout findById(int id);
+	
 	@Query("SELECT n from #{#entityName} n WHERE n.cbpm > ?1")
 	List<Workout> findByCbpmGreaterThan(int cbpm);
 
