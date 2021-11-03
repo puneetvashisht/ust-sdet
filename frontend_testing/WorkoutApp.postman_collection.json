@@ -6,7 +6,92 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:8080/workouts",
+			"name": "Users",
+			"item": [
+				{
+					"name": "Fetch All Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('fetch all users to have status 200', ()=>{\r",
+									"    pm.response.to.have.status(200)\r",
+									"})\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}users/",
+							"host": [
+								"{{URL}}users"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fetch All Workouts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('fetch all workouts to have status 200', ()=>{\r",
+							"    pm.response.to.have.status(200)\r",
+							"})\r",
+							"\r",
+							"\r",
+							"pm.test(\"fetch all workouts to retrieve 8 records\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    // console.log(jsonData)\r",
+							"    pm.expect(jsonData.length).to.eql(9);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}workouts/",
+					"host": [
+						"{{URL}}workouts"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch A Workout By Id",
 			"event": [
 				{
 					"listen": "test",
@@ -28,7 +113,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"title\": \"Swimming\",\r\n        \"desc\": \"Good for health\",\r\n        \"cbpm\": 38\r\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -36,15 +121,152 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/workouts/",
-					"protocol": "http",
+					"raw": "{{URL}}workouts/bytitle/Swimming2",
 					"host": [
-						"localhost"
+						"{{URL}}workouts"
 					],
-					"port": "8080",
 					"path": [
-						"workouts",
+						"bytitle",
+						"Swimming2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch A Workout By Title",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('test something', ()=>{\r",
+							"    pm.response.to.have.status(200)\r",
+							"})\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"title\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}workouts/33",
+					"host": [
+						"{{URL}}workouts"
+					],
+					"path": [
+						"33"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a workout",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Create a workout\", ()=>{\r",
+							"    pm.response.to.have.status(201)\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Swimming3\",\r\n    \"desc\": \"basic cardio\",\r\n    \"cbpm\": 34\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}workouts/",
+					"host": [
+						"{{URL}}workouts"
+					],
+					"path": [
 						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign a Workout to User",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"user11@test.com\",\r\n    \"password\": \"basic\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}workouts/33/assigntouser",
+					"host": [
+						"{{URL}}workouts"
+					],
+					"path": [
+						"33",
+						"assigntouser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start a workout",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"endTime\": \"10:34:50\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}workouts/33",
+					"host": [
+						"{{URL}}workouts"
+					],
+					"path": [
+						"33"
 					]
 				}
 			},
