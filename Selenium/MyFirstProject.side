@@ -2,7 +2,7 @@
   "id": "1c5d8a7e-2807-4a45-886d-1d47a985d2d5",
   "version": "2.0",
   "name": "MyFirstProject",
-  "url": "https://blazedemo.com",
+  "url": "https://the-internet.herokuapp.com/login",
   "tests": [{
     "id": "57065754-c068-4e63-aec3-d57a3b2e1a70",
     "name": "BlazeDemoTest",
@@ -224,6 +224,143 @@
         ["css=pre", "css:finder"],
         ["xpath=//pre", "xpath:position"],
         ["xpath=//pre[contains(.,'{\n    \"id\": \"1635914875955\",\n    \"status\": \"PendingCapture\",\n    \"amount\": \"555\",\n    \"currency\": \"USD\",\n    \"authCode\": \"888888\",\n    \"payment\": {\n        \"cardNumber\": \"xxxxxxxxxxxx1111\",\n        \"cardExpirationMonth\": \"11\",\n        \"cardExpirationYear\": \"2018\"\n    },\n    \"_links\": {\n        \"self\": {\n            \"href\": \"https=>\\/\\/sandbox.api.visa.com\\/cybersource\\/payments\\/v1\\/authorizations\\/1635914875955\",\n            \"method\": \"GET\"\n        },\n        \"capture\": [\n            {\n                \"href\": \"https=>\\/\\/sandbox.api.visa.com\\/cybersource\\/payments\\/v1\\/authorizations\\/1635914875955\\/captures\",\n                \"method\": \"POST\"\n            }\n        ],\n        \"reversal\": [\n            {\n                \"href\": \"https=>\\/\\/sandbox.api.visa.com\\/cybersource\\/payments\\/v1\\/authorizations\\/1635914875955\\/reversals\",\n                \"method\": \"POST\"\n            }\n        ]\n    }\n}\n')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "737b0a0a-60c5-4569-866f-7c076187a402",
+    "name": "HerokuLoginTest",
+    "commands": [{
+      "id": "4bc56a3a-ee58-43d9-a4e6-283fcdfa5389",
+      "comment": "",
+      "command": "open",
+      "target": "https://the-internet.herokuapp.com/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "10f795c1-d12e-4250-9f05-4e1cf0fa4523",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1332x786",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "973b8fc3-cc4c-44ab-8226-cc7553ade903",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='login']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9092cf48-ac05-4ca1-a283-2050adc4e326",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//form[@id='login']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "tomsmith"
+    }, {
+      "id": "52eb10fa-06e9-4539-ab8c-3332556db908",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='login']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "24ef4760-0e09-4ca1-a36b-822b05b9aec2",
+      "comment": "",
+      "command": "click",
+      "target": "id=content",
+      "targets": [
+        ["id=content", "id"],
+        ["css=#content", "css:finder"],
+        ["xpath=//div[@id='content']", "xpath:attributes"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58abf5bd-9c46-46d8-83d6-abfd48f95f55",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='login']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "39bf5978-5b4c-447b-a1d3-7ba131f4d9de",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//form[@id='login']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "SuperSecretPassword!"
+    }, {
+      "id": "76373afe-32dd-4cb9-83b2-8e33bca14b4c",
+      "comment": "",
+      "command": "click",
+      "target": "id=page-footer",
+      "targets": [
+        ["id=page-footer", "id"],
+        ["css=#page-footer", "css:finder"],
+        ["xpath=//div[@id='page-footer']", "xpath:attributes"],
+        ["xpath=//div[3]", "xpath:position"],
+        ["xpath=//div[contains(.,'Powered by Elemental Selenium')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a7201b3b-83e3-4d93-b6ee-8675bb99afd7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa",
+      "targets": [
+        ["css=.fa", "css:finder"],
+        ["xpath=//form[@id='login']/button/i", "xpath:idRelative"],
+        ["xpath=//i", "xpath:position"],
+        ["xpath=//i[contains(.,' Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c76952a-21f1-4424-b749-4d88a7da200e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.icon-2x",
+      "targets": [
+        ["css=.icon-2x", "css:finder"],
+        ["xpath=//div[@id='content']/div/a/i", "xpath:idRelative"],
+        ["xpath=//a/i", "xpath:position"],
+        ["xpath=//i[contains(.,'Logout')]", "xpath:innerText"]
       ],
       "value": ""
     }]
