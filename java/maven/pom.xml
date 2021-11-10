@@ -34,6 +34,20 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>7.0.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>7.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
 
 	</dependencies>
 
@@ -65,9 +79,9 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				 <version>0.8.7</version>
+				<version>0.8.7</version>
 			</plugin>
-		
+
 
 		</plugins>
 
@@ -87,7 +101,7 @@
 					<reportSet>
 						<reports>
 							<!-- select non-aggregate reports -->
-							
+
 							<report>report</report>
 						</reports>
 					</reportSet>
